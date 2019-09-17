@@ -1,16 +1,14 @@
 # Senate Voting System
 Hyperledger based online secure voting solution with LDAP authentication and vote verification
 
--------------------------------------------------------------------------------------------------------------------------
-System Configuration:
--------------------------------------------------------------------------------------------------------------------------
+***System Configuration:***
+
 * Ubuntu 18.04
 * 8GB RAM
 * 1 TB HDD
 
--------------------------------------------------------------------------------------------------------------------------
-Setup:
--------------------------------------------------------------------------------------------------------------------------
+***Setup:***
+
 1. LDAP Server Setup
 * We have installed OpenLDAP along with phpLDAPadmin
 * To setup LDAP server follow the below commands:
@@ -115,9 +113,8 @@ $ npm start
 * To login, use the enlisted voter's ID/Password.
 * The server will start on port 9090.
 
--------------------------------------------------------------------------------------------------------------------------
-Information regarding files:
--------------------------------------------------------------------------------------------------------------------------
+***Information regarding files:***
+
 // 'index.js'
 - It contains all the get and post Express Routing
 - Also, it passes data to .ejs files
