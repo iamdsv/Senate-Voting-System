@@ -1,0 +1,153 @@
+body {
+    background-color: #56baed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    justify-content: center;
+    color:white;
+    }
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    outline: none;
+    transition: all 0.2s;
+}
+
+a:hover,
+a:focus {
+    color: #fdc654;
+    transition: all 0.2s;
+}
+
+html {
+    height: 100%;
+}
+
+.login-card {
+    padding: 32px 32px 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    height: 50%;
+    max-height: 740px;
+    max-width: 350px;
+    flex-direction: column;
+    border: white 1px dotted;
+}
+
+.login-card-content {
+    flex-grow: 2;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card-footer {
+    padding: 32px 0;
+}
+
+h2 .highlight {
+    color: #fdc654;
+}
+
+h2 {
+    font-size: 32px;
+    margin: 0;
+}
+
+.header {
+    margin-bottom: 50px;
+}
+
+
+
+button {
+    background: white;
+    display: block;
+    color: #d61e2d;
+    width: 100%;
+    border: none;
+    border-radius: 40px;
+    padding: 12px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 32px;
+    outline: none;
+}
+
+.form-field {
+    margin-bottom: 16px;
+    width: 100%;
+    position: relative;
+}
+
+.form-field .icon {
+    position: absolute;
+    background: white;
+    color: #d61e2d;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.form-field .icon:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-left: 12px solid white;
+    position: absolute;
+    top: 8px;
+    right: -20px;
+}
+
+.form-field input {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 100%;
+    border-radius: 16px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.form-field input::placeholder {
+    color: white;
+}
+
+.form-field input:hover,
+.form-field input:focus {
+    background: white;
+    color: #d61e2d;
+    transition: all 0.2s;
+}
+
+.form-field input:hover::placeholder {
+    color: #d61e2d;
+}
+
+button:hover,
+focus {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background-color: transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+}

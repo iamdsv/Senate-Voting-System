@@ -1,0 +1,130 @@
+/**
+* Sample access control list.
+*/
+
+rule EverybodyCanReadEverything {
+description: "Allow all participants read access to all resources"
+participant: "org.example.empty.voter"
+operation: READ
+resource: "org.example.empty.*"
+action: ALLOW
+}
+
+//voters can vote
+rule VoterCanVote{
+description: "Allow all voters to vote"
+participant: "org.example.empty.voter"
+operation: CREATE
+resource: "org.example.empty.vote"
+action: ALLOW
+}
+
+//candidate cannot vote
+rule CandidateCanVote {
+description: "Don't allow candidates to vote"
+participant: "org.example.empty.candidate"
+operation: CREATE
+resource: "org.example.empty.vote"
+action: DENY
+}
+
+//vote count cannot be modified by the candidate
+rule VoteCountCannotBeModified {
+description: "Allow all participants read access to votes"
+participant: "org.example.empty.candidate"
+operation: READ
+resource: "org.example.empty.candidateVotes"
+action: ALLOW
+}
+
+//vote count can be modified by the voter
+rule VoteCountCanBeModified {
+description: "Allow all participants read access to votes"
+participant: "org.example.empty.voter"
+operation: READ, UPDATE
+resource: "org.example.empty.candidateVotes"
+action: ALLOW
+}
+
+//update votecasted if voter hasn't voted yet
+rule VoteCasted {
+description: "Allow all participants read access to votes"
+participant: "org.example.empty.voter"
+operation: UPDATE
+resource(c): "org.example.empty.voteCasted" 
+condition: (c.voted == false)
+action: ALLOW
+}
+
+//voter can read his vote
+rule VoteCastedBeModified {
+description: "Allow all participants read access to votes"
+participant(p): "org.example.empty.voter"
+operation: READ
+resource(r): "org.example.empty.voteCasted" 
+condition: (r.participantInvoking.getIdentifier() === p.getIdentifier())
+action: ALLOW
+}
+
+//to be used to verify the votes
+rule VoterHasFullAcessToTheirVotes {
+description: "Allow all participants to verify their votes"
+participant(p): "org.example.empty.voter"
+operation: READ
+resource(r): "org.example.empty.voteCasted"
+condition: (r.owner.getIdentifier() === p.getIdentifier())
+action: ALLOW
+}
+
+//candidate can see and update only his own profile
+rule CandidateSeeUpdateThemselvesOnly {
+description: "Candidate can see and update their own record only"
+participant(t): "org.example.empty.candidate"
+operation: READ, UPDATE
+resource(v): "org.example.empty.candidate"
+condition: (v.getIdentifier() == t.getIdentifier())
+action: ALLOW
+}
+
+//voter cannot update profile of a candidate
+rule VoterCannotUpdateCandidate {
+description: "Voter can only see record of candidate"
+participant: "org.example.empty.voter"
+operation: READ
+resource: "org.example.empty.candidate"
+action: ALLOW
+}
+
+// specifically allow users to see historian records they invoked
+rule historianAccess{
+description: "Only allow members to read historian records referencing transactions they submitted."
+participant(p): "org.example.empty.voter"
+operation: READ
+resource(r): "org.hyperledger.composer.system.HistorianRecord"
+condition: (r.participantInvoking.getIdentifier() == p.getIdentifier())
+action: ALLOW
+}
+
+// prevent users from seeing historian records
+rule hidehistorianAccess{
+description: "Deny access to Historian"
+participant: "org.example.empty.voter"
+operation: READ
+resource: "org.hyperledger.composer.system.HistorianRecord"
+action: DENY
+}
+rule SystemACL {
+description: "System ACL to permit all access"
+participant: "org.hyperledger.composer.system.Participant"
+operation: ALL
+resource: "org.hyperledger.composer.system.**"
+action: ALLOW
+}
+
+rule NetworkAdminUser {
+description: "Grant business network administrators full access to user resources"
+participant: "org.hyperledger.composer.system.NetworkAdmin"
+operation: CREATE, READ
+resource: "**"
+action: ALLOW
+}

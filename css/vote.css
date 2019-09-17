@@ -1,0 +1,213 @@
+body {
+    background-color: #56baed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    justify-content: center;
+    color:white;
+    }
+    
+    nav{
+        width: 100%;
+        display: initial !important;
+    }
+    a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    outline: none;
+    transition: all 0.2s;
+    }
+    
+    a:hover,
+    a:focus {
+    color: #fdc654;
+    transition: all 0.2s;
+    }
+    
+    html {
+    height: 100%;
+    }
+    
+    .login-card {
+    padding: 32px 32px 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    height: 70%;
+    max-height: 740px;
+    max-width: 450px;
+    flex-direction: column;
+    background-color: white;
+    margin: 0.2%;
+    }
+    
+    .login-card-content {
+    flex-grow: 2;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .login-card-footer {
+    padding: 32px 0;
+    }
+    
+    h2 .highlight {
+    color: #fdc654;
+    }
+    
+    h2 {
+    font-size: 26px;
+    margin: 0;
+    }
+    h3{
+        font-size:20px;
+        color:black;
+        margin-top: 20px;
+    }
+    .header {
+    margin-bottom: 50px;
+    }
+    
+    
+    
+    button {
+    background:#56baed;
+    display: block;
+    color: white;
+    width: 50%;
+    border: none;
+    border-radius: 40px;
+    padding: 16px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 72px;
+    outline: none;
+    margin-left: 25%;
+    border: 1px solid #fdc654;
+    }
+    
+    .form-field {
+    margin-bottom: 16px;
+    width: 100%;
+    position: relative;
+    }
+    
+    .form-field .icon {
+    position: absolute;
+    background: #56baed;
+    color: white;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    top: 20%;
+    }
+    
+    .form-field .icon:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-left: 12px solid #fdc654;
+    position: absolute;
+    top: 18px;
+    right: -20px;
+    }
+    
+    .form-field input {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 100%;
+    border-radius: 16px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    transition: all 0.2s;
+    }
+    
+    .form-field input::placeholder {
+    color: white;
+    }
+    
+    .form-field input:hover,
+    .form-field input:focus {
+    background: white;
+    color: #d61e2d;
+    transition: all 0.2s;
+    }
+    
+    .form-field input:hover::placeholder {
+    color: #d61e2d;
+    }
+    
+    button:hover, focus{
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.2s;
+    cursor: pointer;
+    background-color: #fdc654;
+    }
+    
+    .avatar {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 4px solid #56baed;
+    }
+    
+    .content{
+    color:black;
+    float: right;
+    width: 80%;
+    top:-10%;
+    margin-top: -20px;
+    }
+    
+    .content3{
+    color:black;
+    float: right;
+    width: 80%;
+    top:-10%;
+    margin-top: 0px;
+    }
+    
+    .content1{
+    color:black;
+    float: right;
+    width: 80%;
+    top:0%;
+    margin-top: 0%;
+    }
+    
+    .content2{
+    color:black;
+    float: right;
+    width: 80%;
+    top:0%;
+    margin-top: 0%;
+    }
+
+    #vote {
+        position: relative;
+        top: 10%;
+    }
+    #transactions {
+        position: relative;
+        bottom: 10%;
+    }

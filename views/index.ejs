@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Voting System</title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"/> -->
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet'
+        href='https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
+    <link rel='stylesheet' href='/css/style.css'>
+</head>
+
+<body>
+    <div class="login-card">
+        <div class="login-card-content">
+            <div class="header">
+
+                <h2>Senate<span class="highlight">Voting</span></h2>
+
+            </div>
+            <% if(error.length > 0) { %><div class="alert alert-danger"><%= error %></div><% }%>
+            <form method="post">
+                <div class="form">
+                    <div class="form-field username">
+                        <div class="icon">
+                            <i class="far fa-user"></i>
+                        </div>
+                        <input type="text" name="usern" placeholder="Username">
+                    </div>
+                    <div class="form-field password">
+                        <div class="icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+
+                    <button type="submit" formaction="login">
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

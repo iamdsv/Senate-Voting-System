@@ -1,0 +1,5 @@
+query selectCommodities {
+description: "Select all transactions"
+statement:
+SELECT org.hyperledger.composer.system.HistorianRecord
+}

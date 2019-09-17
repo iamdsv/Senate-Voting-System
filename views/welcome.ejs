@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <base href="/">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet'
+        href='https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i'>
+    <link rel='stylesheet' href='/css/vote.css'>
+    <style>
+        .form-field .icon {
+
+            width: 380px;
+            height: 60px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            top: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logout" style="margin-left: 30%"><a href="/logout">Logout</a></div>
+        <div class="login-card" style="margin-left: 30%">
+            <div class="login-card-content">
+                <div class="header">
+                    <img src="https://sophosnews.files.wordpress.com/2014/04/anonymous-250.jpg?w=250" class="avatar"
+                        alt="Person">
+                    <h2><span class="highlight">Hey <%= name %></span></h2>
+                    <h3>Information regarding Senate Voting</h3>
+                </div>
+                <form method="GET">
+                    <div class="form">
+                        <div class="form-field username">
+                            <div class="icon"><br><br>
+                                <i class="moto"></i>Now Vote more securely with Hyperledger BlockChain
+                            </div>
+                            <p class="content">
+                            </p>
+                        </div>
+
+                        <br><br> <br> <br> <br>
+                        <div class="form-field username">
+                            <div class="icon"><br><br>
+                                <i class="moto"></i>Vote carefully! You cannot modify your vote, once voted!
+                            </div>
+                            <p class="content3">
+                            </p>
+                        </div>
+
+                        <br><br> <br> <br>
+                        <div class="form-field password">
+                            <div class="icon"><br><br>
+                                <i class="moto"></i>You can also verify your vote at any point of time.
+                            </div><br>
+                            <p class="content1">
+                            </p>
+                        </div>
+
+
+                        <br><br><br>
+                        <div class="form-field password">
+                            <div class="icon"><br><br>
+                                <i class="moto"></i>Results will be announced on the website, when the schedule ends.
+                            </div><br>
+                            <p class="content2">
+                            </p>
+                        </div>
+
+                        <br> <br><br><button type="submit" formaction="/api/getCandidates">
+                            Proceed to Voting
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Voting System</title>
+    <base href="/">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet'
+        href='https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i'>
+    <link rel='stylesheet' href='/css/vote.css'>
+</head>
+
+<body>
+    <% if(tx.length == 0) { %>
+    <div><a href="/logout">Logout</a></div>
+    <% } %>
+    <% users.forEach(function(user){ %>
+    <div class="login-card">
+        <div class="login-card-content">
+            <div class="header">
+                <img src="https://sophosnews.files.wordpress.com/2014/04/anonymous-250.jpg?w=250" class="avatar"
+                    alt="Person">
+                <br><br>
+                <h2><span class="highlight"><%= user.fname %> <%= user.lname %></span></h2>
+
+            </div>
+            <form method="POST" action="/api/vote">
+                <div class="form">
+                    <div class="form-field username">
+                        <div class="icon"><br><br>
+                            <i class="moto"></i>Moto
+                        </div>
+                        <p class="content">
+                            <%= user.agenda %></p>
+                    </div>
+
+                    <br><br> <br> <br> <br><br>
+                    <div class="form-field username">
+                        <div class="icon"><br><br>
+                            <i class="moto"></i>Prev Work
+                        </div>
+                        <p class="content3">
+                            <%= user.prevWork %> </p>
+                    </div>
+
+                    <br><br> <br> <br>
+                    <div class="form-field password">
+                        <div class="icon"><br><br>
+                            <i class="moto"></i>Dept.
+                        </div><br>
+                        <p class="content1">
+                            <%= user.department %></p>
+                    </div>
+
+
+                    <br><br><br>
+                    <div class="form-field password">
+                        <div class="icon"><br><br>
+                            <i class="moto"></i>ID
+                        </div><br>
+                        <p class="content2">
+                            <%= user.candidateID %></p>
+                    </div>
+                    <input type="text" id="textFieldId" name="textField" value="<%= user.candidateID %>" hidden>
+                    <br><br><br><br> <button type="submit">
+                        Vote Now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div id="voted">
+    <% })%>
+    <div class="container">
+        <% if(tx.length > 0) { %>
+        <div><a href="/logout">Logout</a></div>
+        <div>
+            <center>
+                <h2>You have successfully voted!</h2>
+            </center>
+            <br />
+            <h4>You can verify your vote from your transactions:</h4>
+        </div>
+        <div id="transactions">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="3">
+                            <center>Transactions</center>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Transaction Type</th>
+                        <th>Transaction Timestamp</th>
+                        <th>Your Vote</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% tx.forEach(function(t){ %>
+                    <tr>
+                        <% let a = t.transactionType.split('.') %>
+                        <td><%= a[a.length - 1] %></td>
+                        <td><%= t.transactionTimestamp %></td>
+                        <td><%= candidateID %></td>
+                    </tr>
+                    <% })%>
+                </tbody>
+            </table>
+            <% }%>
+        </div>
+    </div>
+</body>
+
+</html>
