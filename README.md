@@ -5,7 +5,7 @@ Hyperledger based online secure voting solution with LDAP authentication and vot
 
 * Ubuntu 18.04
 * 8GB RAM
-* 1 TB HDD
+* 1TB HDD
 
 ***Setup:***
 
