@@ -19,7 +19,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-passport-ldap-mongoose": "^2.0.3",
-    "jsdom": "^14.0.0",
+    "jsdom": "^16.5.0",
     "log": "^5.1.0",
     "md5": "^2.2.1",
     "mongoose": "^5.5.0",
