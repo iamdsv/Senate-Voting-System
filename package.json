@@ -17,7 +17,7 @@
     "composer-common": "^0.20.8",
     "connect-flash": "^0.1.1",
     "ejs": "^2.6.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-passport-ldap-mongoose": "^2.0.3",
     "jsdom": "^14.0.0",
     "log": "^5.1.0",
